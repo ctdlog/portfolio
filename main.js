@@ -64,6 +64,7 @@ arrowUp.addEventListener("click", () => {
 // Filtering projects
 
 const workBtnContainer = document.querySelector(".work__categories");
+const categoryBtns = document.querySelectorAll(".category__btn");
 const projectContainer = document.querySelector(".work__projects");
 const projects = document.querySelectorAll(".project");
 
@@ -72,6 +73,15 @@ workBtnContainer.addEventListener("click", (e) => {
   if (filter == null) {
     return;
   }
+
+  // Remove selection from the previous item and select the new
+
+  const active = document.querySelector(".category__btn.selected");
+  active.classList.remove("selected");
+  const target =
+    e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode.target;
+  e.target.classList.add("selected");
+
   projectContainer.classList.add("anim-out");
   setTimeout(() => {
     projects.forEach((project) => {
@@ -84,6 +94,22 @@ workBtnContainer.addEventListener("click", (e) => {
     projectContainer.classList.remove("anim-out");
   }, 300);
 });
+
+// // Navbar active filtering
+
+// const navbarContainer = document.querySelector(".navbar__menu");
+// const navbarMenuItems = document.querySelectorAll(".navbar__menu__item");
+
+// navbarContainer.addEventListener("click", (e) => {
+//   const filter = e.target.dataset.link.substring(1);
+//   navbarMenuItems.forEach((navbarMenuItem) => {
+//     if (filter === navbarMenuItem.dataset.link.substring(1)) {
+//       navbarMenuItem.classList.add("active");
+//     } else {
+//       navbarMenuItem.classList.remove("active");
+//     }
+//   });
+// });
 
 // Common Function
 
