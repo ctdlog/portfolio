@@ -13,6 +13,14 @@ document.addEventListener("scroll", () => {
   }
 });
 
+// Navbar toggle button from smaill screen
+
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+
+navbarToggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
+});
+
 // Handle scrolling when tapping on the navbar menu
 
 const navbarMenu = document.querySelector(".navbar__menu");
@@ -23,6 +31,7 @@ navbarMenu.addEventListener("click", (event) => {
   if (link === null) {
     return;
   }
+  navbarMenu.classList.remove("open");
   scrollIntoView(link);
 });
 
@@ -94,22 +103,6 @@ workBtnContainer.addEventListener("click", (e) => {
     projectContainer.classList.remove("anim-out");
   }, 300);
 });
-
-// // Navbar active filtering
-
-// const navbarContainer = document.querySelector(".navbar__menu");
-// const navbarMenuItems = document.querySelectorAll(".navbar__menu__item");
-
-// navbarContainer.addEventListener("click", (e) => {
-//   const filter = e.target.dataset.link.substring(1);
-//   navbarMenuItems.forEach((navbarMenuItem) => {
-//     if (filter === navbarMenuItem.dataset.link.substring(1)) {
-//       navbarMenuItem.classList.add("active");
-//     } else {
-//       navbarMenuItem.classList.remove("active");
-//     }
-//   });
-// });
 
 // Common Function
 
