@@ -116,21 +116,28 @@ button {
   padding: 8px;
 }
 
-.navbar__menu {
-  display: flex;
-}
-
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+  color: white;
+  margin-left: 15px;
+}
+
+.navbar__menu {
+  display: flex;
 }
 
 .navbar__menu__item {
   padding: 8px 12px;
   margin: 0 4px;
+  color: var(--color-white);
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: var(--size-border-radius);
+}
+
+.navbar__menu__item.active {
+  border: 1px solid var(--color-white);
 }
 
 .navbar__menu__item:hover {
@@ -181,7 +188,7 @@ button {
 /* Section common */
 
 .section {
-  padding: 50px;
+  padding: 70px 150px;
   text-align: center;
   margin: auto;
 }
@@ -195,8 +202,8 @@ button {
 
 .about__majors {
   display: flex;
-  justify-content: space-between;
-  margin: 80px 0;
+  justify-content: center;
+  margin: 80px;
 }
 
 .major__icon {
